@@ -1,0 +1,139 @@
+@import '../../styling/colors.scss';
+@import '../../styling/media-queries';
+
+.HeaderComponent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bloody-mimosa;
+    color: white;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: sticky;
+    height: 10vh;
+    @include from-small() {
+        padding-left: calc(50% - 220px);
+        padding-right: calc(50% - 220px);
+    }
+
+    @include from-medium() {
+        justify-content: space-between;
+        position: relative;
+        padding-left: calc(50% - 300px);
+        padding-right: calc(50% - 300px);
+    }
+
+    @include from-semi-large() {
+        padding-left: calc(50% - 320px);
+        padding-right: calc(50% - 320px);
+    }
+
+    @include from-large() {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .logo {
+        color: whitesmoke;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav-items {
+        left: 0px;
+        top: 100%;
+        position: absolute;
+        transition: transform 250ms ease-in-out;
+        transform: scale(1, 0);
+        transform-origin: top;
+        width: 100%;
+
+        @include from-medium() {
+            all: unset;
+            transform: scale(1, 1);
+        }
+
+        ul {
+            background: $bloody-mimosa;
+            list-style: none;
+            margin: 0;
+            padding: 1rem 0 0 0;
+            text-align: left;
+
+            @include from-medium() {
+                display: flex;
+                flex-direction: row;
+                background: none;
+            }
+
+            li {
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+
+                a {
+                    color: whitesmoke;
+                    opacity: 0;
+                    text-decoration: none;
+                    transition: opacity 200ms ease-in-out;
+
+                    @include from-medium() {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &.visible {
+            transform: scale(1, 1);
+
+            a {
+                opacity: 1;
+            }
+        }
+    }
+
+    .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: transparent;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 70px;
+
+        @include from-medium() {
+            display: none;
+        }
+    }
+
+    .hamburger span,
+    .hamburger span::before,
+    .hamburger span::after {
+        content: '';
+        background: whitesmoke;
+        border-radius: 2px;
+        display: block;
+        height: 2px;
+        position: relative;
+        width: 2rem;
+    }
+
+    .hamburger span::before {
+        top: -0.6rem;
+    }
+    .hamburger span::after {
+        top: 0.4rem;
+    }
+}
+
+@media print {
+    .HeaderComponent {
+        // -webkit-print-color-adjust: exact;
+        display: none;
+    }
+}

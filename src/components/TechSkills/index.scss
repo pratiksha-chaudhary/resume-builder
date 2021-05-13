@@ -1,0 +1,15 @@
+@import '../../styling/media-queries';
+
+.TechSkillsComponent {
+    grid-area: tech;
+    margin-bottom: 1rem;
+
+    @include from-large(){
+        margin-bottom: 2rem;
+    }
+}
+@media print {
+    .edit-icon {
+        display: none;
+    }
+}
