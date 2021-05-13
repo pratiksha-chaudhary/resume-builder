@@ -8,8 +8,8 @@ import IconHeader from '../IconHeader';
 function Contact() {
   const [isEditModeOn, setIsEditModeOn] = useState(false);
   const [address, setAddress] = useState('Berlin, BE, 12059');
-  const [phoneNumber, setPhoneNumber] = useState('017635091028');
-  const [email, setEmail] = useState('dummy@gmail.com');
+  const [phoneNumber, setPhoneNumber] = useState('+49 176 350 910 49');
+  const [email, setEmail] = useState('pratiksha.chaudhary89@gmail.com');
 
   const saveContact = () => {
     setAddress(document.getElementById('address').value);

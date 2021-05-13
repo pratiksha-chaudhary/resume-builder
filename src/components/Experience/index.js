@@ -76,7 +76,7 @@ function Experience({ experience, updateWorkExperience }) {
             experience.responsibilities.map((res, i) => <li key={i}>{res}</li>)}
         </ul>
         <div className="add-linebreak">
-          <div className="edit-icon">Add space to move content down to control page views</div>
+          <div>Add space to move content down to control page views</div>
           <img
             className="edit-icon"
             src={addIcon}
