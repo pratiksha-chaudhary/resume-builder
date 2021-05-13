@@ -35,16 +35,6 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to={AppRoutes.TechBlogs} activeClassName="active">
-            Tech Blogs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to={AppRoutes.PersonalBlogs} activeClassName="active">
-            Personal Blogs
-            </NavLink>
-          </li>
-          <li>
             <NavLink to={AppRoutes.AboutMe} activeClassName="active">
               About me
             </NavLink>
